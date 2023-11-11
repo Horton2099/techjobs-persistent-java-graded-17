@@ -15,12 +15,16 @@ public class Skill extends AbstractEntity {
 
     @ManyToMany(mappedBy = "skills")
 //    @JoinColumn(name = "skill_id")
-    private final List<Job> jobs = new ArrayList<>();
+    private List<Job> jobs = new ArrayList<>();
     public Skill(String description) {
         this.description = description;
     }
 
     public Skill() {
+    }
+
+    public void setJobs(List<Job> jobs) {
+        this.jobs = jobs;
     }
 
     public List<Job> getJobs() {
